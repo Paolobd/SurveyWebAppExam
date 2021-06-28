@@ -1,0 +1,67 @@
+html{
+    background-color: #f8f8ff;
+} 
+
+textarea {
+  resize: none;
+}
+
+.App {
+  font-size: large;
+  margin-bottom: 1em;
+  background-color: #f8f8ff;
+}
+
+.navButton{
+  color: black;
+}
+
+.navButton:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.titleBackgroundBorder {
+  text-align: center;
+  margin-top: 1em;
+  background-color: #ffc107;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+.userStyle {
+  background-color: #ffc107;
+  border: 2px solid black;
+}
+
+.errorStyle{
+  white-space: pre-line;
+  color: red;
+}
+
+.commentCard {
+  white-space: pre-line;
+  font-style: italic;
+}
+
+.blackBorder {
+  border: 2px solid black;
+}
+
+.thinBlackBorder{
+  border: 1px solid black;
+}
+
+.backgroundWarning {
+  background-color: #ffc107;
+}
+
+.cardMarginBorder{
+  margin-bottom: 1em;
+  border: 1px solid black;
+}
+
+.titleBoldCenter{
+  font-weight: bold;
+  text-align: center;
+}
