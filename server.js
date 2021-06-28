@@ -9,6 +9,7 @@ const LocalStrategy = require('passport-local').Strategy; // username and passwo
 const session = require('express-session'); // enable sessions
 const userDao = require('./user-dao'); // module for accessing the administrators in the DB
 const surveyDao = require('./survey-dao'); // module for accessing surveys, reponses, questions in the DB
+const path = require('path');
 
 /*** Set up Passport ***/
 // set up the "username and password" login strategy
@@ -47,11 +48,12 @@ const errorFormatter = ({ location, msg, param, value, nestederrors }) => {
 
 // init express
 const app = new express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // set-up the middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.static("./client/build"));
 
 // custom middleware: check if a given request is coming from an authenticated admin
 const isLoggedIn = (req, res, next) => {
@@ -269,6 +271,10 @@ app.get('/api/sessions/current', (req, res) => {
   else
     res.status(401).json({ error: 'Unauthenticated user!' });;
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
 
 // activate the server
 app.listen(port, () => {
