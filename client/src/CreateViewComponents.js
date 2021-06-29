@@ -517,8 +517,8 @@ function OpenFormInfo(props) {
     return (
         <Col className='text-left'>
             <Form.Group controlId='questionMandatory'>
-                <Form.Check inline label='Optional' checked={props.min === 0 ? true : false} type='radio' onChange={() => props.setMin(0)} />
-                <Form.Check inline label='Mandatory' checked={props.min === 1 ? true : false} type='radio' onChange={() => props.setMin(1)} />
+            <Form.Check inline label='Optional' checked={props.min === 0 ? true : false} type='radio' onChange={() => props.setMin(0)}  id='inline-optional'/>
+                <Form.Check inline label='Mandatory' checked={props.min === 1 ? true : false} type='radio' onChange={() => props.setMin(1)} id='inline-mandatory'/>
             </Form.Group>
         </Col>
     );
