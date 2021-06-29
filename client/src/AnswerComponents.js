@@ -317,7 +317,9 @@ function DisplayOption(props) {
     }
 
     return (
-        <Form.Check label={props.option.text} type={props.type} checked={props.checked} onChange={() => handleClick()} />
+        <Form.Group controlId={`formOption${props.option.id}`}>
+            <Form.Check label={props.option.text} type={props.type} checked={props.checked} onChange={() => handleClick()} />
+        </Form.Group>
     );
 }
 

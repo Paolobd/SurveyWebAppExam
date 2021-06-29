@@ -97,7 +97,7 @@ app.get('/api/surveys',
 
 //Retrieve the questions of a survey
 app.get('/api/surveys/:surveyId/questions', [
-  check('surveyId').isInt()
+  check('surveyId').isInt({ min: 1 })
 ],
   async (req, res) => {
     const errors = validationResult(req).formatWith(errorFormatter); //format error message
@@ -123,7 +123,7 @@ app.get('/api/surveys/:surveyId/questions', [
 app.get('/api/surveys/:surveyId/responses',
   isLoggedIn,
   [
-    check('surveyId').isInt()
+    check('surveyId').isInt({ min: 1 })
   ],
   async (req, res) => {
     const errors = validationResult(req).formatWith(errorFormatter); //format error message
@@ -176,8 +176,9 @@ app.post('/api/surveys/:surveyId/questions',
   isLoggedIn,
   [
     check('title').isLength({ min: 1, max: 100 }),
-    check(['min', 'surveyId', 'position']).isInt(),
-    check('max').isInt().optional({ nullable: true }),
+    check('min').isInt({ min: 0 }),
+    check(['position', 'surveyId']).isInt({ min: 1 }),
+    check('max').isInt({ min: 1 }).optional({ nullable: true }),
     check('options').isJSON().optional({ nullable: true })
   ],
   async (req, res) => {
@@ -209,7 +210,7 @@ app.post('/api/surveys/:surveyId/responses',
   [
     check('name').isLength({ min: 1, max: 25 }),
     check('answers').isJSON(),
-    check('surveyId').isInt()
+    check('surveyId').isInt({ min: 1 })
   ],
   async (req, res) => {
     const errors = validationResult(req).formatWith(errorFormatter); //format error message

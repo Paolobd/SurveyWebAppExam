@@ -602,7 +602,10 @@ function DisplayOption(props) {
     //Displays options when question is added/view responses mode
     const checked = (props.answer !== undefined && props.answer.value.filter(ansOpt => ansOpt === props.option.id)[0] !== undefined) ? true : false;
     return (
-        <Form.Check label={props.option.text} readOnly checked={checked} type={props.type} />
+        <Form.Group controlId={`formOption${props.option.id}`}>
+            <Form.Check label={props.option.text} readOnly checked={checked} type={props.type} />
+        </Form.Group>
+
     );
 }
 
