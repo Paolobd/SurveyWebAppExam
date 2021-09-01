@@ -1,5 +1,6 @@
-# Exam #1: "Survey"
-## Student: s292479 BODNARESCUL PAOLO STEFANUT 
+# Course: Web Applications I at Politecnico di Torino
+# Exam: "Survey" (June 2021) 
+## Student: BODNARESCUL PAOLO STEFANUT 
 
 ## React Client Application Routes
 
