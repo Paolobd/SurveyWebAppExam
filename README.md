@@ -2,9 +2,6 @@
 # Exam: "Survey" (June 2021) 
 ## Student: BODNARESCUL PAOLO STEFANUT 
 
-## APP in action
-Go to https://arcane-eyrie-04793.herokuapp.com/
-
 ## React Client Application Routes
 
 - Route `/`:
